@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :reviews
+  root 'entry#index'
+
   resources :clinics
 
-  root 'entry#index'
+  post  '/reviews(.:format)', to: 'reviews#create', as: 'reviews'
 
 end
