@@ -1,0 +1,30 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @clinic.name
+p
+  strong Group:
+  = @clinic.group
+p
+  strong Area:
+  = @clinic.area_id
+p
+  strong Postal code:
+  = @clinic.postal_code
+p
+  strong Address:
+  = @clinic.address
+p
+  strong Tel:
+  = @clinic.tel
+p
+  strong Url:
+  = @clinic.url
+p
+  strong Mail:
+  = @clinic.mail
+
+= link_to 'Edit', edit_clinic_path(@clinic)
+'|
+= link_to 'Back', clinics_path
