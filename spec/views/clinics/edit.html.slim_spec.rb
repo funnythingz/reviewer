@@ -2,16 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "clinics/edit", :type => :view do
   before(:each) do
-    @clinic = assign(:clinic, Clinic.create!(
-      :name => "MyString",
-      :group => "MyString",
-      :area_id => "",
-      :postal_code => "MyString",
-      :address => "MyString",
-      :tel => "MyString",
-      :url => "MyString",
-      :mail => "MyString"
-    ))
+    @clinic = create(:clinic)
   end
 
   it "renders the edit clinic form" do
