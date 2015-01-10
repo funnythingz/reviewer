@@ -13,9 +13,9 @@ class ClinicsController < ApplicationController
     @errors = flash[:errors]
 
     if params[:sort] == 'bad'
-      @reviews = @clinic.review.published.bad.desc
+      @reviews = @clinic.review.published.bad.desc.page(params[:page])
     else
-      @reviews = @clinic.review.published.good.desc
+      @reviews = @clinic.review.published.good.desc.page(params[:page])
     end
   end
 

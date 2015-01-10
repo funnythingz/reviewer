@@ -80,3 +80,6 @@
             = sanitize review.comment
           .text-right.time
             = review.created_at
+
+    .text-center
+      = paginate @reviews
