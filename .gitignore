@@ -17,7 +17,7 @@ config/secrets.yml
 /vendor/bundle
 
 .rvmrc
-.ruby-version
+#.ruby-version
 
 # if using bower-rails ignore default bower_components path bower.json files
 /vendor/assets/bower_components
