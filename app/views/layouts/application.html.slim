@@ -7,4 +7,25 @@ html
     = javascript_include_tag 'application'
     = csrf_meta_tags
   body
-    = yield
+    nav.navbar.navbar-default.navbar-fixed-top role="navigation"
+      .container
+        .container-fluid
+          .navbar-header
+            button.navbar-toggle.collapsed data-target="#bs-nav" data-toggle="collapse" type="button"
+              span.sr-only Toggle navigation
+              span.icon-bar
+              span.icon-bar
+              span.icon-bar
+            = link_to root_path, class: 'navbar-brand logo'
+              i.fa.fa-comment-o.large
+              small
+                |  α
+
+    .global-container
+      = yield
+
+    .container
+      .copyright
+        | &copy;&nbsp;
+        = link_to 'http://smooth-corp.jp/', target: '_blank'
+          | Smooth Inc.
