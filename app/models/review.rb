@@ -1,5 +1,7 @@
 class Review < ActiveRecord::Base
 
+  paginates_per 20
+
   belongs_to :clinic
   has_one :clinic
 
