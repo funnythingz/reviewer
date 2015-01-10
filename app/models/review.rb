@@ -3,7 +3,6 @@ class Review < ActiveRecord::Base
   paginates_per 20
 
   belongs_to :clinic
-  has_one :clinic
 
   validates :reviewer, presence: { message: '名前を入力してください' }
   validates :mail, presence: { message: 'メールアドレスを入力してください' }
