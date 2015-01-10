@@ -1,6 +1,6 @@
 .container
 
-  .row.spacing
+  row.spacing
     h1
       = @clinic.name
       - if @clinic.group.present?
@@ -25,8 +25,7 @@
           i.fa.fa-envelope
           |  #{@clinic.mail}
 
-  .spacing
-
+  row.spacing
     - if @errors.present?
       .alert.alert-danger role="alert"
         ul
@@ -34,7 +33,7 @@
             li
               | #{error[1].first}
 
-    = simple_form_for(Review.new, url: reviews_path, html: { method: :post, class: 'form-horizontal' }) do |f|
+    = simple_form_for(Review.new, url: reviews_path, html: { method: :post, class: 'form-horizontal spacing' }) do |f|
       = f.error_notification
       .form-inputs
         .row
