@@ -40,6 +40,9 @@ gem 'chronic'
 gem 'active_link_to'
 gem 'meta-tags'
 
+# admin
+gem 'rails_admin'
+
 group :development, :test do
   gem 'typescript-rails', '~> 0.4.2'
   gem 'byebug'
