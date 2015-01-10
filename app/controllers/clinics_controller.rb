@@ -10,10 +10,12 @@ class ClinicsController < ApplicationController
   # GET /clinics/1
   # GET /clinics/1.json
   def show
+    @errors = flash[:errors]
+
     if params[:sort] == 'bad'
-      @reviews = @clinic.review.bad
+      @reviews = @clinic.review.published.bad.desc
     else
-      @reviews = @clinic.review.good
+      @reviews = @clinic.review.published.good.desc
     end
   end
 

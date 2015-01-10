@@ -22,17 +22,15 @@ class ReviewsController < ApplicationController
   end
 
   # POST /reviews
-  # POST /reviews.json
   def create
     @review = Review.new(review_params)
+    @review.status = 'draft'
 
     respond_to do |format|
       if @review.save
-        format.html { redirect_to @review, notice: 'Review was successfully created.' }
-        format.json { render :show, status: :created, location: @review }
+        format.html { redirect_to clinic_path(@review.clinic_id), notice: '口コミの投稿ありがとうございました' }
       else
-        format.html { render :new }
-        format.json { render json: @review.errors, status: :unprocessable_entity }
+        format.html { redirect_to :back, flash: { errors: @review.errors.messages } }
       end
     end
   end
