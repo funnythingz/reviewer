@@ -1,5 +1,8 @@
 class Review < ActiveRecord::Base
 
+  belongs_to :clinic
+  has_one :clinic
+
   validates :reviewer, presence: true
   validates :mail, presence: true
   validates :status, presence: true
