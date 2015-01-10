@@ -15,7 +15,8 @@ gem 'jquery-rails', '~> 4.0.2'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem "rails_config"
+gem 'rails_config'
+gem 'devise'
 
 # assets
 gem 'rails-assets-jquery'
