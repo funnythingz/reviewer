@@ -1,35 +1,12 @@
-h1 Listing clinics
+.container
+  h1 街の歯医者の口コミ・レビューサイト
 
-table
-  thead
-    tr
-      th Name
-      th Group
-      th Area
-      th Postal code
-      th Address
-      th Tel
-      th Url
-      th Mail
-      th
-      th
-      th
+  .spacing
+    .panel.panel-default
+      .list-group
+        - @clinics.each do |clinic|
+          = link_to clinic_path(clinic), class: 'list-group-item'
+            = clinic.name
 
-  tbody
-    - @clinics.each do |clinic|
-      tr
-        td = clinic.name
-        td = clinic.group
-        td = clinic.area_id
-        td = clinic.postal_code
-        td = clinic.address
-        td = clinic.tel
-        td = clinic.url
-        td = clinic.mail
-        td = link_to 'Show', clinic
-        td = link_to 'Edit', edit_clinic_path(clinic)
-        td = link_to 'Destroy', clinic, data: {:confirm => 'Are you sure?'}, :method => :delete
-
-br
-
-= link_to 'New Clinic', new_clinic_path
+  .text-center
+    = paginate @clinics
