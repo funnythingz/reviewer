@@ -2,30 +2,47 @@
 
   p#notice = notice
 
-  h1
-    = @clinic.name
-    - if @clinic.group.present?
-      small
-        = @clinic.group
-  p.lead
-    = @clinic.area_id
-  ul.list-inline.list-unstyled
-    li
-      | 〒#{@clinic.postal_code} #{@clinic.address}
-    - if @clinic.tel.present?
+  .row.spacing
+    h1
+      = @clinic.name
+      - if @clinic.group.present?
+        small
+          = @clinic.group
+    p.lead
+      = @clinic.area_id
+    ul.list-inline.list-unstyled
       li
-        i.fa.fa-phone
-        |  #{@clinic.tel}
-    - if @clinic.url.present?
-      li
-        = link_to @clinic.url, target: '_blank'
-          i.fa.fa-home
-            |  #{@clinic.url}
-    - if @clinic.mail.present?
-      li
-        i.fa.fa-envelope
-        |  #{@clinic.mail}
+        | 〒#{@clinic.postal_code} #{@clinic.address}
+      - if @clinic.tel.present?
+        li
+          i.fa.fa-phone
+          |  #{@clinic.tel}
+      - if @clinic.url.present?
+        li
+          = link_to @clinic.url, target: '_blank'
+            i.fa.fa-home
+              |  #{@clinic.url}
+      - if @clinic.mail.present?
+        li
+          i.fa.fa-envelope
+          |  #{@clinic.mail}
 
+  .row.spacing
+    ul.nav.nav-tabs.nav-justified.spacing
+      li class=('active' unless params[:sort] == 'bad')
+        = link_to clinic_path
+          i.fa.fa-thumbs-o-up
+          |  Good
+          |  #{@clinic.review.good.size}
+      li class=('active' if params[:sort] == 'bad')
+        = link_to clinic_path(sort: 'bad')
+          i.fa.fa-thumbs-o-down
+          |  Bad
+          |  #{@clinic.review.bad.size}
+
+    .row
+      - @reviews.each do |review|
+        = review
 
   = link_to 'Edit', edit_clinic_path(@clinic)
   '|

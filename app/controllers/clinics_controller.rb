@@ -10,6 +10,11 @@ class ClinicsController < ApplicationController
   # GET /clinics/1
   # GET /clinics/1.json
   def show
+    if params[:sort] == 'bad'
+      @reviews = @clinic.review.bad
+    else
+      @reviews = @clinic.review.good
+    end
   end
 
   # GET /clinics/new
