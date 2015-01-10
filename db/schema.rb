@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150110092141) do
+ActiveRecord::Schema.define(version: 20150110093623) do
 
   create_table "clinics", force: :cascade do |t|
     t.string   "name",        limit: 255
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 20150110092141) do
     t.string   "mail",        limit: 255
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string   "reviewer",   limit: 255
+    t.string   "mail",       limit: 255
+    t.text     "comment",    limit: 65535
+    t.string   "status",     limit: 255
+    t.integer  "clinic_id",  limit: 4
+    t.string   "action",     limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
 end
