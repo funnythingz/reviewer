@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration
       t.string :reviewer
       t.string :mail
       t.text :comment
-      t.boolean :status
+      t.boolean :published
       t.integer :clinic_id
       t.string :action
 

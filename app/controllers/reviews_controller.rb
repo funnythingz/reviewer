@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   # POST /reviews
   def create
     @review = Review.new(review_params)
-    @review.status = false
+    @review.published = false
 
     respond_to do |format|
       if @review.save
@@ -16,6 +16,6 @@ class ReviewsController < ApplicationController
 
   private
     def review_params
-      params.require(:review).permit(:reviewer, :mail, :comment, :status, :clinic_id, :action)
+      params.require(:review).permit(:reviewer, :mail, :comment, :published, :clinic_id, :action)
     end
 end
