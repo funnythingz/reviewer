@@ -31,12 +31,12 @@ RSpec.describe Review, :type => :model do
 
     describe 'scope' do
 
-      context 'status' do
+      context 'published' do
         it {
-          expect(Review.published.first.status).to eq 'published'
+          expect(Review.published.first.published).to be_truthy
         }
         it {
-          expect(Review.draft.first.status).to eq 'draft'
+          expect(Review.draft.first.published).to be_falsey
         }
       end
 

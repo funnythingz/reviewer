@@ -5,13 +5,13 @@ FactoryGirl.define do
   factory :review do
     reviewer "hrtn"
     mail Faker::Internet.email
-    status "published"
+    published true
     clinic_id 1
     action "good"
     comment "けいたん歯科は最高なんだお！"
 
     factory :review_draft do
-      status "draft"
+      published false
     end
 
     factory :review_bad do

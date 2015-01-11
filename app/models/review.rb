@@ -7,20 +7,19 @@ class Review < ActiveRecord::Base
   validates :reviewer, presence: { message: '名前を入力してください' }
   validates :mail, presence: { message: 'メールアドレスを入力してください' }
   validates :clinic_id, presence: true
-  validates :status, presence: true
   validates :action, presence: true
   validates :comment, length: { maximum: 1000}, presence: { message: 'コメントを入力してください' }
 
   def is_published?
-    status == 'published'
+    published == true
   end
 
   def is_draft?
-    status == 'draft'
+    published == false
   end
 
-  scope :published, -> { where(status: 'published') }
-  scope :draft,     -> { where(status: 'draft') }
+  scope :published, -> { where(published: true) }
+  scope :draft,     -> { where(published: false) }
   scope :good,      -> { where(action: 'good') }
   scope :bad,       -> { where(action: 'bad') }
   scope :desc,      -> { order(created_at: :desc) }

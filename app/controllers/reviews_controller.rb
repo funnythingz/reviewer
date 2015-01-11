@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   # POST /reviews
   def create
     @review = Review.new(review_params)
-    @review.status = 'draft'
+    @review.status = false
 
     respond_to do |format|
       if @review.save
