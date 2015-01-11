@@ -42,7 +42,8 @@ gem 'active_link_to'
 gem 'meta-tags'
 
 # admin
-gem 'rails_admin'
+gem 'activeadmin', github: 'activeadmin'
+gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
 
 group :development, :test do
   gem 'typescript-rails', '~> 0.4.2'
