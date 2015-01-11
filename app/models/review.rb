@@ -5,7 +5,7 @@ class Review < ActiveRecord::Base
   belongs_to :clinic
 
   validates :reviewer, presence: { message: '名前を入力してください' }
-  validates :mail, presence: { message: 'メールアドレスを入力してください' }
+  validates :mail, email_format: { message: 'メールアドレスを正しく入力してください' }
   validates :clinic_id, presence: true
   validates :action, presence: true
   validates :comment, length: { maximum: 1000}, presence: { message: 'コメントを入力してください' }
