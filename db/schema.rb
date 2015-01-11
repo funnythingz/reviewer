@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(version: 20150111060620) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true, using: :btree
 
   create_table "areas", force: :cascade do |t|
-    t.integer  "parent_id",  limit: 4
+    t.integer  "top_id",     limit: 4
     t.string   "name",       limit: 255
+    t.boolean  "top_flg",    limit: 1
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end

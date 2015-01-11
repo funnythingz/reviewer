@@ -8,7 +8,7 @@
           small
             = @clinic.group
       p.lead
-        = @clinic.area_id
+        | #{@clinic.area.decorate.top.name}#{@clinic.area.name}
       ul.list-inline.list-unstyled
         li
           | 〒#{@clinic.postal_code} #{@clinic.address}

@@ -1,11 +1,7 @@
 require 'spec_helper'
 
 describe AreaDecorator do
-  it{
-    expect(create(:area)).to be_valid
-  }
-
-  describe 'scope' do
+  describe 'decorate' do
     before :each do
       create(:area)
       create(:area_child)
@@ -14,11 +10,11 @@ describe AreaDecorator do
     end
 
     it {
-      expect(@area.decorate.parent.name).to eq @area.name
+      expect(@area.decorate.top.name).to eq @area.name
     }
 
     it {
-      expect(@area_child.decorate.parent.name).to eq @area.name
+      expect(@area_child.decorate.top.name).to eq @area.name
     }
   end
 end

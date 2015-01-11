@@ -1,8 +1,8 @@
 class AreaDecorator < Draper::Decorator
   delegate_all
 
-  def parent
-    Area.find_by(id: object.parent_id)
+  def top
+    Area.find_by(id: object.top_id)
   end
 
 end

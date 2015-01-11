@@ -1,8 +1,9 @@
 class CreateAreas < ActiveRecord::Migration
   def change
     create_table :areas do |t|
-      t.integer :parent_id
+      t.integer :top_id
       t.string :name
+      t.boolean :top_flg
 
       t.timestamps null: false
     end
