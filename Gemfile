@@ -45,6 +45,9 @@ gem 'meta-tags'
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
 
+# validate
+gem 'validates_email_format_of'
+
 group :development, :test do
   gem 'typescript-rails', '~> 0.4.2'
   gem 'byebug'
