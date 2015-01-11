@@ -14,7 +14,7 @@ test:
 
 production:
   <<: *default
-  username: sqale_b4c3d19cee
-  password: a27670ee12bfbbb45d949d51bb089c232ff46ca38ba7e8ec
-  database: sqale_b4c3d19cee
+  username: sqale_b229bd0546
+  password: 3b479777e5df20e019dd1963735e3e8df530fa0e8352089f
+  database: sqale_b229bd0546
   host: mysql001.sqale.jp
