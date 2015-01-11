@@ -66,6 +66,7 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.1)
+    active_admin_importable (1.1.2)
     active_link_to (1.0.2)
       actionpack
     activejob (4.2.0)
@@ -340,6 +341,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_admin_importable
   active_link_to
   activeadmin!
   better_errors

@@ -44,6 +44,7 @@ gem 'meta-tags'
 # admin
 gem 'activeadmin', github: 'activeadmin'
 gem 'inherited_resources', github: 'josevalim/inherited_resources', branch: 'rails-4-2'
+gem 'active_admin_importable'
 
 # validate
 gem 'validates_email_format_of'
