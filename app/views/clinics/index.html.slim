@@ -1,10 +1,11 @@
 .container
   .spacing
-    .panel.panel-default
-      .list-group
-        - @clinics.each do |clinic|
-          = link_to clinic_path(clinic), class: 'list-group-item'
-            = clinic.name
+    - if @clinics.present?
+      .panel.panel-default
+        .list-group
+          - @clinics.each do |clinic|
+            = link_to clinic_path(clinic), class: 'list-group-item'
+              = clinic.name
 
   .text-center
     = paginate @clinics
