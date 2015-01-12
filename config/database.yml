@@ -6,15 +6,12 @@ default: &default
 
 development:
   <<: *default
-  database: denter_development
+  database: reviewer_development
 
 test:
   <<: *default
-  database: denter_test
+  database: reviewer_test
 
 production:
   <<: *default
-  username: sqale_b229bd0546
-  password: 3b479777e5df20e019dd1963735e3e8df530fa0e8352089f
-  database: sqale_b229bd0546
-  host: mysql001.sqale.jp
+  database: reviewer_test
