@@ -1,13 +1,13 @@
 FactoryGirl.define do
   factory :area do
-    id 120006
-    top_id 120006
-    name '千葉県'
+    id 130001
+    top_id 130001
+    name '東京都'
     top_flg true
 
     factory :area_child do
-      id 122076
-      name '松戸市'
+      id 131016
+      name '千代田区'
       top_flg false
     end
   end

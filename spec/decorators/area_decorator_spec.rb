@@ -5,8 +5,8 @@ describe AreaDecorator do
     before :each do
       create(:area)
       create(:area_child)
-      @area = Area.find_by(id: 120006)
-      @area_child = Area.find_by(id: 122076)
+      @area = Area.find_by(id: 130001)
+      @area_child = Area.find_by(id: 131016)
     end
 
     it {

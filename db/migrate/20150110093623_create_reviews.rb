@@ -5,7 +5,7 @@ class CreateReviews < ActiveRecord::Migration
       t.string :mail
       t.text :comment
       t.boolean :published
-      t.integer :clinic_id
+      t.integer :target_id
       t.string :action
 
       t.timestamps null: false

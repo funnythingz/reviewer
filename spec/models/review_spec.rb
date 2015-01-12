@@ -48,7 +48,7 @@ RSpec.describe Review, :type => :model do
           }
 
           it {
-            expect(Review.good.first.comment).to eq "けいたん歯科は最高なんだお！"
+            expect(Review.good.first.comment).to eq "最高ですね！"
           }
         end
 
@@ -58,7 +58,7 @@ RSpec.describe Review, :type => :model do
           }
 
           it {
-            expect(Review.bad.first.comment).to eq "けいたん歯科はほんとにうんこですね。ぼったくりですね。虫歯どころか全部抜かれやがったんだぜ！どういうことなんだってばよ！"
+            expect(Review.bad.first.comment).to eq "うんこですね！くそですね！"
           }
         end
       end

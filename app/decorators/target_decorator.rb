@@ -1,4 +1,4 @@
-class ClinicDecorator < Draper::Decorator
+class TargetDecorator < Draper::Decorator
   delegate_all
 
   # Define presentation-specific methods here. Helpers are accessed through

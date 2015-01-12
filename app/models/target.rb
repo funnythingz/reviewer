@@ -1,4 +1,4 @@
-class Clinic < ActiveRecord::Base
+class Target < ActiveRecord::Base
 
   paginates_per 20
 

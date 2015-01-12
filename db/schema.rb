@@ -52,7 +52,18 @@ ActiveRecord::Schema.define(version: 20150111105923) do
     t.datetime "updated_at",             null: false
   end
 
-  create_table "clinics", force: :cascade do |t|
+  create_table "reviews", force: :cascade do |t|
+    t.string   "reviewer",   limit: 255
+    t.string   "mail",       limit: 255
+    t.text     "comment",    limit: 65535
+    t.boolean  "published",  limit: 1
+    t.integer  "target_id",  limit: 4
+    t.string   "action",     limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "targets", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.string   "group",       limit: 255
     t.integer  "area_id",     limit: 4
@@ -63,17 +74,6 @@ ActiveRecord::Schema.define(version: 20150111105923) do
     t.string   "mail",        limit: 255
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.string   "reviewer",   limit: 255
-    t.string   "mail",       limit: 255
-    t.text     "comment",    limit: 65535
-    t.boolean  "published",  limit: 1
-    t.integer  "clinic_id",  limit: 4
-    t.string   "action",     limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
   end
 
 end

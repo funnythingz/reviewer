@@ -6,9 +6,9 @@ FactoryGirl.define do
     reviewer "hrtn"
     mail Faker::Internet.email
     published true
-    clinic_id 1
+    target_id 1
     action "good"
-    comment "けいたん歯科は最高なんだお！"
+    comment "最高ですね！"
 
     factory :review_draft do
       published false
@@ -16,7 +16,7 @@ FactoryGirl.define do
 
     factory :review_bad do
       action "bad"
-      comment "けいたん歯科はほんとにうんこですね。ぼったくりですね。虫歯どころか全部抜かれやがったんだぜ！どういうことなんだってばよ！"
+      comment "うんこですね！くそですね！"
     end
   end
 end

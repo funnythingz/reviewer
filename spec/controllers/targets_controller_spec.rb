@@ -18,10 +18,10 @@ require 'rails_helper'
 # Message expectations are only used when there is no simpler way to specify
 # that an instance is receiving a specific message.
 
-RSpec.describe ClinicsController, :type => :controller do
+RSpec.describe TargetsController, :type => :controller do
 
   # This should return the minimal set of attributes required to create a valid
-  # Clinic. As you add validations to Clinic, be sure to
+  # Target. As you add validations to Target, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -33,22 +33,22 @@ RSpec.describe ClinicsController, :type => :controller do
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
-  # ClinicsController. Be sure to keep this updated too.
+  # TargetsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   describe "GET index" do
-    it "assigns all clinics as @clinics" do
-      clinic = Clinic.create! valid_attributes
+    it "assigns all targets as @targets" do
+      target = Target.create! valid_attributes
       get :index, {}, valid_session
-      expect(assigns(:clinics)).to eq([clinic])
+      expect(assigns(:targets)).to eq([target])
     end
   end
 
   describe "GET show" do
-    it "assigns the requested clinic as @clinic" do
-      clinic = Clinic.create! valid_attributes
-      get :show, {:id => clinic.to_param}, valid_session
-      expect(assigns(:clinic)).to eq(clinic)
+    it "assigns the requested target as @target" do
+      target = Target.create! valid_attributes
+      get :show, {:id => target.to_param}, valid_session
+      expect(assigns(:target)).to eq(target)
     end
   end
 

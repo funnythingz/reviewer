@@ -1,0 +1,11 @@
+.container
+  .spacing
+    - if @targets.present?
+      .panel.panel-default
+        .list-group
+          - @targets.each do |target|
+            = link_to target_path(target), class: 'list-group-item'
+              = target.name
+
+  .text-center
+    = paginate @targets

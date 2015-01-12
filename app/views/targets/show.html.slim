@@ -3,28 +3,28 @@
   row.spacing
     .col-md-12
       h1
-        = @clinic.name
-        - if @clinic.group.present?
+        = @target.name
+        - if @target.group.present?
           small
-            = @clinic.group
+            = @target.group
       p.lead
-        | #{@clinic.area.decorate.top.name}#{@clinic.area.name}
+        | #{@target.area.decorate.top.name}#{@target.area.name}
       ul.list-inline.list-unstyled
         li
-          | 〒#{@clinic.postal_code} #{@clinic.address}
-        - if @clinic.tel.present?
+          | 〒#{@target.postal_code} #{@target.address}
+        - if @target.tel.present?
           li
             i.fa.fa-phone
-            |  #{@clinic.tel}
-        - if @clinic.url.present?
+            |  #{@target.tel}
+        - if @target.url.present?
           li
-            = link_to @clinic.url, target: '_blank'
+            = link_to @target.url, target: '_blank'
               i.fa.fa-home
-                |  #{@clinic.url}
-        - if @clinic.mail.present?
+                |  #{@target.url}
+        - if @target.mail.present?
           li
             i.fa.fa-envelope
-            |  #{@clinic.mail}
+            |  #{@target.mail}
 
   row.spacing
     .col-md-12
@@ -45,12 +45,12 @@
               = f.input :mail, required: true, label: 'メールアドレス(非公開です)', placeholder: 'name@example.domain'
           = f.input :action, collection: [['良い', 'good'], ['悪い', 'bad']], as: :select, item_wrapper_tag: 'li', required: true, prompt: false, label: '評判'
           = f.input :comment, as: :text, required: true, label: '感想など', input_html: {rows: 4}
-          = f.input :clinic_id, as: :hidden, required: true, input_html: {value: params[:id]}
+          = f.input :target_id, as: :hidden, required: true, input_html: {value: params[:id]}
 
         p
           small.minor
             i.fa.fa-exclamation-triangle
-            |  #{@clinic.name}に関する感想・評判などを書いてください。口コミを投稿すると、管理元にコメント掲載依頼の通知が届きます。管理元が投稿された内容をチェックしてから1~2日以内に掲載します。
+            |  #{@target.name}に関する感想・評判などを書いてください。口コミを投稿すると、管理元にコメント掲載依頼の通知が届きます。管理元が投稿された内容をチェックしてから1~2日以内に掲載します。
         .form-actions.text-right
           = f.button :submit, class: 'btn btn-primary', value: '口コミを投稿する'
 
@@ -63,15 +63,15 @@
     .col-md-12
       ul.nav.nav-tabs.nav-justified.spacing
         li class=('active' unless params[:sort] == 'bad')
-          = link_to clinic_path
+          = link_to target_path
             i.fa.fa-thumbs-o-up
             |  Good
-            |  #{@clinic.review.published.good.size}
+            |  #{@target.review.published.good.size}
         li class=('active' if params[:sort] == 'bad')
-          = link_to clinic_path(sort: 'bad')
+          = link_to target_path(sort: 'bad')
             i.fa.fa-thumbs-o-down
             |  Bad
-            |  #{@clinic.review.published.bad.size}
+            |  #{@target.review.published.bad.size}
 
       - @reviews.decorate.each do |review|
         .panel.panel-default
