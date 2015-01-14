@@ -22,6 +22,8 @@ gem 'devise'
 gem 'rails-assets-jquery'
 gem 'rails-assets-underscore'
 gem 'rails-assets-components-font-awesome'
+gem 'rails-assets-bootstrap'
+gem 'rails-assets-bootswatch'
 
 # decorate
 gem 'draper', '~> 1.3'
@@ -48,6 +50,9 @@ gem 'active_admin_importable'
 
 # validate
 gem 'validates_email_format_of'
+
+# search
+gem 'ransack', github: 'activerecord-hackery/ransack'
 
 group :development, :test do
   gem 'typescript-rails', '~> 0.4.2'
